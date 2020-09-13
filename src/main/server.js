@@ -1,10 +1,12 @@
 import express from 'express';
 import http from 'http';
-import middleware from './middleware/app-middleware';
+import middleware from '../middleware/app-middleware';
+import routes from '../routes/main.routes';
 
 const app = express();
 
 app.use(middleware);
+app.use(routes);
 
 const server = http.createServer(app);
 
